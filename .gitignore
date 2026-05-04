@@ -1,0 +1,42 @@
+# Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# VSCode
+.vscode/
+*.code-workspace
+.history/
+
+# MySQL Workbench
+*.mwb.bak
+*.mwbd
+sql_history
+log/
+*.bak
+
+# MySQL dumps / backups
+*.sql.bak
+*.dump
+*.mysql_history
+.mysql_history
+
+# MySQL config (often contains credentials)
+my.cnf
+.my.cnf
+
+# Logs
+*.log
+
+# Credentials / env
+.env
+.env.local
+secrets.*
+*.pem
+
+# Misc
+tmp/
+*.tmp
