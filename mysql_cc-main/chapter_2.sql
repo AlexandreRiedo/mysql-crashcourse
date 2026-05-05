@@ -116,22 +116,22 @@ values
 (2, 'Sally', 'Jones', '76 Boulevard Meugler'),
 (3, 'Karen', 'Bellyacher', '354 Main Street');
 
-create table complaint
+create table customer
     (
-    complaint_id  int,
+    customer_id  int,
     customer_id   int,
-    complaint     varchar(200),
-    primary key (complaint_id),
+    customer     varchar(200),
+    primary key (customer_id),
     foreign key (customer_id) references customer(customer_id)
     );
 	
--- Insert one row of data into the complaint table
-insert into complaint (complaint_id, customer_id, complaint)
+-- Insert one row of data into the customer table
+insert into customer (customer_id, customer_id, customer)
 values (1, 3, 'I want to speak to your manager');
 
--- Trying to insert this row into the complaint table will fail
+-- Trying to insert this row into the customer table will fail
 -- because there is no customer 4 in the customer table.
-insert into complaint (complaint_id, customer_id, complaint)
+insert into customer (customer_id, customer_id, customer)
 values (2, 4, 'My food was cold');
 
 alter table customer add column zip varchar(50);

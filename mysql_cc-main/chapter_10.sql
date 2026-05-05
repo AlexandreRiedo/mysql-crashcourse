@@ -46,45 +46,45 @@ create table company
     owner_phone_number	varchar(20)
     );
 
-create table complaint
+create table customer
 	(
-       complaint_id		int,
+       customer_id		int,
        company_id		int,
-       complaint_desc	varchar(200)
+       customer_desc	varchar(200)
     );
 
 insert into company values (1, 'Cattywampus Cellular', 'Sam Shady', '784-785-1245');
 insert into company values (2, 'Wooden Nickel Bank', 'Oscar Opossum', '719-997-4545');
 insert into company values (3, 'Pitiful Pawn Shop', 'Frank Fishy', '917-185-7911');
 
-insert into complaint  values (1, 1, "Phone doesn't work");
-insert into complaint  values (2, 1, 'Wiki is on the blink');
-insert into complaint  values (3, 1, 'Customer Service is bad');
-insert into complaint  values (4, 2, 'Bank closes too early');
-insert into complaint  values (5, 3, 'My iguana died');
-insert into complaint  values (6, 3, 'Police confiscated my purchase');
+insert into customer  values (1, 1, "Phone doesn't work");
+insert into customer  values (2, 1, 'Wiki is on the blink');
+insert into customer  values (3, 1, 'Customer Service is bad');
+insert into customer  values (4, 2, 'Bank closes too early');
+insert into customer  values (5, 3, 'My iguana died');
+insert into customer  values (6, 3, 'Police confiscated my purchase');
 
-create view v_complaint as
+create view v_customer as
 select   a.company_name,
          a.owner,
          a.owner_phone_number,
          count(*)
 from     company a
-join     complaint b
+join     customer b
 on       a.company_id = b.company_id
 group by a.company_name,
 		 a.owner,
          a.owner_phone_number;
 
-create view v_complaint_public as
+create view v_customer_public as
 select   a.company_name,
          count(*)
 from     company a
-join     complaint b
+join     customer b
 on       a.company_id = b.company_id
 group by a.company_name;
 
-select * from v_complaint_public;
+select * from v_customer_public;
 
 -- This update will work
 update  v_course_beginner
@@ -92,7 +92,7 @@ set     course_name = 'Introduction to Python 3.1'
 where   course_name = 'Introduction to Python';
 
 -- This update will not work. 
-update  v_complaint
+update  v_customer
 set     owner_phone_number = '578-982-1277'
 where   owner = 'Sam Shady';
 
