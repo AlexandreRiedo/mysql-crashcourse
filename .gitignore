@@ -40,3 +40,10 @@ secrets.*
 # Misc
 tmp/
 *.tmp
+
+# DBeaver
+.dbeaver/credentials-config.json
+.dbeaver/.metadata/
+.dbeaver/.recent-files
+*.dbeaver-data-sources-config.json
+.Trash/
