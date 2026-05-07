@@ -164,6 +164,8 @@ values
 (2, 'Sally', 'Jones', '76 Boulevard Meugler'),
 (3, 'Karen', 'Bellyacher', '354 Main Street');
 
+SELECT first_name, last_name FROM customer;
+
 -- Exercise 3-1: Select first and last name from the customer table
 select	first_name,
 		last_name
@@ -175,3 +177,6 @@ select	customer_id,
 		last_name
 from	customer
 where	first_name = 'Karen';
+
+
+SELECT * FROM customer ORDER BY address;
