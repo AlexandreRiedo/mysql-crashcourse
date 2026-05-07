@@ -427,6 +427,8 @@ insert into bad_snack (snack_name) values ('BBQ ribs');
 insert into bad_snack (snack_name) values ('nachos');
 
 -- Exercise 6-2: An inner join with three tables
+USE canada;
+
 select a.attraction_name,
        c.city_name,
        p.province_name
