@@ -420,12 +420,16 @@ insert into musician values ('Tex Macaroni', 		'915-789-1721', 'Country Singer')
 insert into musician values ('Bronzy Bohannon', 	'212-211-1216', 'Sax Player');
 
 -- Exercise 7-1: Finding Singers from Nashville
-select * from musician
-where (
-      phone like '615%'
-or    phone like '629%'
-      )
-and   musician_type like '%Singer%';
+SELECT
+	*
+FROM
+	musician
+WHERE
+	(
+		phone LIKE '615%'
+			OR phone LIKE '629%'
+	)
+	AND musician_type LIKE '%Singer%';
 
 
 -- Create a database for Exercise 7-2
